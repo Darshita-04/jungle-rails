@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= image_tag line_item.product.image.thumb.url, alt: line_item.product.name, class: "img-thumbnail", width: "75" %>
+  </td>
+  <td>
+    <strong><%= line_item.product.name %></strong><br>
+    <small><%= line_item.product.description.truncate(50) %></small>
+  </td>
+  <td><%= line_item.quantity %></td>
+  <td><%= humanized_money_with_symbol line_item.product.price %></td>
+  <td><%= humanized_money_with_symbol (line_item.product.price * line_item.quantity) %></td>
+</tr>
