@@ -1,9 +1,8 @@
-class Admin::DashboardController < ApplicationController
+class Admin::CategoriesController < ApplicationController
   before_action :authenticate
 
-  def show
-    @product_count = Product.count
-    @category_count = Category.count
+  def index
+    @categories = Category.all
   end
 
   private
