@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+
   root to: 'products#index'
+  get '/about', to: 'about#index', as: 'about'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
@@ -17,6 +19,9 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index]
   end
+
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
