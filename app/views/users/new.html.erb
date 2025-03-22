@@ -1,0 +1,30 @@
+<div class="mx-auto mb-5" style="max-width:400px;">
+  <header class="page-header">
+    <h1>Sign Up</h1>
+  </header>
+  <%= form_with model: @user, local: true do |form| %>
+    <p>
+      <%= form.label :first_name %><br>
+      <%= form.text_field :first_name, class: "form-control" %>
+    </p>
+    <p>
+      <%= form.label :last_name %><br>
+      <%= form.text_field :last_name, class: "form-control" %>
+    </p>
+    <p>
+      <%= form.label :email %><br>
+      <%= form.email_field :email, class: "form-control" %>
+    </p>
+    <p>
+      <%= form.label :password %><br>
+      <%= form.password_field :password, class: "form-control" %>
+    </p>
+    <p>
+      <%= form.label :password_confirmation %><br>
+      <%= form.password_field :password_confirmation, class: "form-control" %>
+    </p>
+    <p>
+      <%= form.submit "Sign Up", class: "btn btn-primary" %>
+    </p>
+  <% end %>
+</div>
