@@ -20,8 +20,8 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <%# <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -59,10 +59,21 @@
             <li><%= link_to 'Products', [:admin, :products], class: "nav-link" %></li>
           </ul>
         </li>
-        <li class="nav-item end-0">
+        <li class="nav-item">
           <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
           My Cart (<%= cart.size %>) <% end %>
         </li>
+        <li class="nav-item end-0">
+          <% if session[:user_id] %>
+            <%= link_to 'Logout', logout_path, method: :delete, class: "nav-link" %>
+          <% else %>
+            <%= link_to 'Sign Up', signup_path, class: "nav-link d-inline-block" %> 
+            <span class: "nav-link d-inline-block">|</span>
+            <%= link_to 'Log In', login_path, class: "nav-link d-inline-block" %>
+          <% end %>
+        </li>
+
+
       </ul>
     </div>
   </div>
